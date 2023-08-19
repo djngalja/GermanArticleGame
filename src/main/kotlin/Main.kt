@@ -24,13 +24,13 @@ fun game(maxNumOfRounds: Int = 7) {
         println("___ ${nouns[index].word}")
         var input = readln().trim()
         while (input.lowercase() != nouns[index].article.value.lowercase()) {
-            if (round == maxNumOfRounds - 1) {
+            round++
+            if (round == maxNumOfRounds) {
                 println()
                 break@loop
             }
             println("Try again!")
             input = readln().trim()
-            round++
         }
         if (input.lowercase() == nouns[index].article.value.lowercase()) {
             println("${nouns[index].article.value} ${nouns[index].word}. Correct!\n")
